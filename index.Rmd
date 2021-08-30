@@ -1,5 +1,5 @@
 ---
-title: "Maquiagem como instrumento terapêutico, duas visões possíveis"
+title: "Transtornos de Personalidade <br> & Redes Sociais"
 subtitle: "Mini Portfólio"
 author: "Kédma Thaynara"
 date: "`r Sys.Date()`"
@@ -31,35 +31,42 @@ library(DiagrammeR)
 
 layout: true
   
-<div class="my-footer"><span>Psicologia 3º Semestre - UFMT  | Psicologia Social - Prof: Alessandro Vinicius de Paula  |  e-mail: kedmathayktps@gmail.com | link do slide online: https://bit.ly/31i4gjG </span></div>
+<div class="my-footer"><span> Psicologia 5° Semestre - UFMT | Disciplina: Psicopatologia Nosográfica  - Prof°. Thiago Marques</span></div>
 
 <!-- this adds the link footer to all slides, depends on my-footer class in css-->
 
 ---
 name: bookdown-title
-background-image: url(img/raphael-lovaski-unsplash.jpg)
+background-image: url(img/cover.jpg)
 background-size: cover
 class: inverse
 
 
 <br>
 <br>
-
-
-# Maquiagem como
-
-# instrumento terapêutico
-
-# sob dois aspectos
-
-<br>
 <br>
 <br>
 <br>
 <br>
 <br>
 
-.large[`r rmarkdown::metadata$author`]
+
+# Transtornos de Personalidade <br> Representações na mídia
+
+
+<br>
+<br>
+
+.small[
+Fabiana Carvalho De Cesaro <br>
+Geovane Barbosa Araujo Oliveira <br>
+Kédma Thaynara P. S. <br>
+Victor Augusto Rocha e Souza <br>
+Yasmim Mochizuki Hamaguti <br>
+Yolanda Teixeira Neves
+
+
+]
 
 <!-- this ends up being the title slide since seal = FALSE-->
 
@@ -79,261 +86,1112 @@ individual files:
 HTML to lots of HTML --> BOOK (via bookdown)
 
 ---
-background-image: url(img/fares-hamouche-unsplash.jpg)
+background-image: url(img/intro.jpg)
 background-size: cover
 class: inverse
 
-# AUTOIMAGEM
-
-
-
-
----
-background-image: url(img/eye-for-ebony-unsplash.jpg)
-background-size: cover
-class: inverse
-
-
-# AUTOESTIMA
-
-
-
----
-
-### VISAGISMO E MAQUIAGEM 
+### Transtornos da personalidade (DSM-5 p.646)
 
 <!-- Works with xaringan's default CSS -->
 
 .pull-left[
-```{r plot-label1, echo=FALSE, message=FALSE, warning=FALSE}
-# para retirar notacoes cientifica
-options(scipen = 999)
 
+- **Grupo A:** inclui os transtornos da personalidade paranoide, esquizoide e esquizotípica. Indivíduos com esses transtornos frequentemente parecem esquisitos ou excêntricos;
 
-#install.packages(tidyverse)
-library(tidyverse)
+- **Grupo B:** inclui os transtornos da personalidade antissocial, borderline, histriônica e narcisista. Indivíduos com esses transtornos costumam parecer dramáticos, emotivos ou erráticos;
 
-# criando a tabela com dados da figura 2
-# em Brum, Maravieski, Bertim (2013)
-Brum_Maravieski_Bertim_2013 <- tibble(
-  adolescentes = c(
-    "A", "B", "C", "D", "E", "F", "G"
-  ),
-  antes = c(
-    16, 10, 13, 25, 26, 13, 15
-  ),
-  depois = c(
-    20, 19, 22, 22, 26, 27, 23
-  )
-)
+- **Grupo C:** inclui os transtornos da personalidade evitativa, dependente e obsessivo-compulsiva. Indivíduos com esses transtornos com frequência parecem ansiosos ou medrosos.
 
-
-# criando uma variavel de variacao percentual
-variacao_percentual <- Brum_Maravieski_Bertim_2013 %>%
-  mutate(var_pct = ((depois/antes) - 1) # * 100
-         ) %>%
-  select(-depois, -antes)
-
-
-# empilhando os dados para gerar o grafico de baras
-Brum_Maravieski_Bertim_2013 <- Brum_Maravieski_Bertim_2013 %>%
-  gather(avaliação, escores, antes,depois)
+]
 
 
 
 
-# REPRESENTACAO GRAFICA
 
-# install.packages("viridis")
-# library(viridis)
-library(RColorBrewer)
-# scale_fill_viridis_d works just the same as
-# scale_colour_viridis_d but for fill colours
-Brum_Maravieski_Bertim_2013 %>%
-  ggplot( aes(x=adolescentes, y=escores, fill=avaliação)) +
-  geom_bar(stat="identity", position=position_dodge()) +
-  #scale_fill_viridis_d()
-  #scale_fill_grey(start = 0.8, end = 0.2)
-  geom_text(aes(label=escores), vjust=1.6, color="white",
-            position = position_dodge(0.9), size=3.5)+
-  scale_fill_brewer(palette="Paired")+
-  labs(x='',y='',
-       title='Escores de autoestima obtidos antes e depois das oficinas de visagismo \ne maquiagem em adolescentes institucionalizadas',
-       caption='Fonte: Brum, Maravieski, Bertim (2013)') +
-  theme_minimal()
+---
 
-```
+
+### A fantástica fábrica de chocolates (2005)
+
+<!-- Works with xaringan's default CSS -->
+
+.pull-left[
+
+<br>
+<br>
+
+**Direção:** Tim Burton
+<br>
+**Gênero:** Comédia/ Fantasia/ Musical
+<br>
+**Duração:** 106 m 
+<br>
+**Personagem:** Willy Wonka (Johnny Depp)
+<br>
+**Transtorno:** Transtorno de personalidade Esquizotípica 
+<br>
+**Artigo/ estudo de caso:** Produção Cinematográfica Como Fonte De Estudo Sobre Transtorno Da Personalidade Esquizotípica 
+<br>
+**Abordagem:** psicodinâmica
+
+
 ]
 
 .pull-right[
-````{r plot-label2, echo=FALSE, message=FALSE, warning=FALSE}
 
-
-# grafico variacao percentual
-# scale_colour_viridis_d but for fill colours
-attach(variacao_percentual)
-variacao_percentual %>%
-  ggplot( aes(x=adolescentes, y=var_pct)) +
-  geom_bar(stat="identity", fill = ifelse(var_pct>0, "#1e569e", "gray"),
-           colour = ifelse(var_pct>0, "#1e569e", "gray"),
-           position=position_dodge()) +
-  ylim(-0.30,1.50) +
-  geom_text(
-    aes(label= scales::percent(var_pct)), size=3,
-    fontface='bold',
-    position = position_dodge(width = 2),
-    hjust=0.5, vjust=ifelse(var_pct>0,-0.7,1),
-    shape=21, colour=ifelse(var_pct>0,"black", 'red'))+
-  #scale_fill_viridis_d()
-  #scale_fill_grey(start = 0.8, end = 0.2)
-  scale_fill_brewer(palette="Paired")+
-  labs(x='',y='',
-       title='Variação entre as avaliações',
-       caption='Fonte: Brum, Maravieski, Bertim (2013)') +
-  scale_y_continuous(labels = scales::percent) +
-  theme_minimal()
-
-
-
+```{r out.width="50%", echo=FALSE}
+knitr::include_graphics("img/fabiana-00.jpg")
 ```
+
 ]
 
 ---
-class: middle
+background-image: url(img/fabiana-02.jpg)
+background-size: cover
 
-.center[
-<video width="320" height="568" controls>
-  <source src="img/camuflagem.mp4" type="video/mp4">
-</video>
+
+### A fantástica fábrica de chocolates (2005)
+
+<!-- Works with xaringan's default CSS -->
+
+.pull-left[
+
+**Sinopse:** “Contando a história de Willy Wonka, excêntrico dono da maior fábrica de doces do planeta, que decide realizar um concurso para escolher um herdeiro para seu império. Cinco crianças  de  sorte  encontram  um  convite  dourado  em  barras  de  chocolate  Wonka, ganhando  uma  visita  guiada  pela  lendária  fábrica  de  chocolate.  Entre  as  crianças encontram-se  Augustus  Gloop,  Violet  Beauregarde,  Veruca  Salt,  Mike  Teevee,  Charlie Bucket. No final da visita Charlie ganha a fábrica de chocolate, mas a recusa, já que não poderia levar sua família” (SANGIOVANNI; BOTTI, 2011, P. 17).
+
+
+]
+
+
+
+---
+background-image: url(img/fabiana-03.jpg)
+background-size: cover
+
+
+### A fantástica fábrica de chocolates (2005)
+
+<!-- Works with xaringan's default CSS -->
+
+.pull-left[
+
+**Resultados:**
+<br>
+Wonka apresenta o transtorno de personalidade esquizotípica (TPE), com déficits sociais e interpessoais de comportamento.
+<br>
+<br>
+**Critérios apresentados pela personagem:**
+
+-	**Ideias de referência:** “[...] interpretações incorretas de incidentes casuais e eventos externos como tendo um sentido particular e incomum especificamente para a pessoa” (APA, 2014, p. 656).
+
+
+
 ]
 
 
 ---
-background-image: url(img/pierrick-van-unsplash.jpg)
+
+### A fantástica fábrica de chocolates (2005)
+
+<!-- Works with xaringan's default CSS -->
+
+.pull-left[
+
+- **Crenças estranhas ou pensamento mágico:** [...] influenciam o comportamento e são inconsistentes com as normas subculturais (p. ex., superstições, crença em clarividência, telepatia ou “sexto sentido”; em crianças e adolescentes, fantasias ou preocupações bizarras) ” (APA, 2014, p. 655).  [os anões Oompa-Loompa]
+
+]
+
+.pull-right[
+
+```{r out.width="100%", echo=FALSE}
+knitr::include_graphics("img/fabiana-04.png")
+```
+
+]
+
+
+
+
+---
+
+### A fantástica fábrica de chocolates (2005)
+
+<!-- Works with xaringan's default CSS -->
+
+.pull-left[
+
+- **Experiências perceptivas incomuns:** “Ao receber as cinco crianças que encontraram   o   bilhete   premiado   com   seus   familiares, Willy   Wonka, prepara   uma apresentação de bonecos a fim de recepcioná-los na visita à fábrica, mas esta é assustadora e tenebrosa para as crianças.  Já para Willy, é um show magnífico. É possível caracterizar   este   critério   diagnóstico   também   em   várias   outras   cenas   do   filme, principalmente nas que apresentam as crianças passando por estranhos acidentes” (SANGIOVANNI; BOTTI, 2011, p. 18).
+
+]
+
+.pull-right[
+
+```{r out.width="100%", echo=FALSE}
+knitr::include_graphics("img/fabiana-05.jpg")
+```
+
+]
+
+
+
+---
+
+### A fantástica fábrica de chocolates (2005)
+
+<!-- Works with xaringan's default CSS -->
+
+.pull-left[
+
+- **Pensamentos e discursos estranhos:**  chocolate que vira pássaro, sorvete que não derrete, castelo de chocolate. 
+- **Desconfiança ou ideação paranoide:** acredita que espiões tentaram roubar suas receitas.
+- **Afeto inadequado ou constrito:** dificuldade de contato, gaguejar. 
+- **Comportamento ou aparência estranha, excêntrica ou peculiar:** modo de vestir, aparência, uso de cartolas, luvas, casacos e óculos exagerados. 
+- **Ausência de amigos próximos ou confidentes que não sejam parentes de primeiro grau:** ele se esquiva de contatos íntimos ao longo do filme.
+- **Ansiedade social excessiva:** “ [...] que não diminui com o convívio e que tende a estar associada mais a temores paranoides do que a julgamentos negativos sobre si mesmo” (APA, 2014, p. 656).  Nunca mais foi visto, ninguém mais entrou em sua fábrica.
+
+
+]
+
+.pull-right[
+
+```{r out.width="100%", echo=FALSE}
+knitr::include_graphics("img/fabiana-06.jpg")
+```
+
+]
+
+
+---
+
+### A fantástica fábrica de chocolates (2005)
+
+<!-- Works with xaringan's default CSS -->
+
+.pull-left[
+
+“Sabendo da importância da família  na formação  da  personalidade  é  interessante resgatar  cenas  que  destacam  a  relação  de  Willy  Wonka  com  o  seu  pai  como  importante fator  da subjetivação  esquizotípica  do  personagem.  Entre elas, cita-se a  cena onde  Willy Wonka ao ser interpelado por Charlie sobre sua infância lembra-se do seu pai, dentista de maior  renome  na  cidade,  durante  um  Dia  das  Bruxas  no  qual  ele  pegou  doces  pela vizinhança e não pode experimentá-los, sendo severamente reprimido pelo pai” (SANGIOVANNI; BOTTI, 2011, p. 19).
+
+
+]
+
+.pull-right[
+
+```{r out.width="100%", echo=FALSE}
+knitr::include_graphics("img/fabiana-07.jpg")
+```
+
+]
+
+
+
+---
+
+### A fantástica fábrica de chocolates (2005)
+
+<!-- Works with xaringan's default CSS -->
+
+.pull-left[
+
+“Outro aspecto  importante  revelado  pela  psiquiatria  dinâmica  refere-se  que  os sinais  e  sintomas  mostram  a  relação  de  controle  do  inconsciente  e  a  confusão  do consciente  caracterizando  o  determinismo  psíquico.14  Neste  sentido  a  cena  que  Willy Wonka ao procurar Charlie comenta que “não tem nada contra a sua família, mas sim com toda  idéia  de  família,  pois  eles  vivem  dizendo  o  que  você  deve  e  não  deve  fazer  e  isso atrapalha muito a criatividade”.8Os  profissionais  que  trabalham  com  a  abordagem  psicodinâmica  devem  escutar os  pacientes,  principalmente  no  relato  de  sua  infância,  pois  a  experiência  infantil influencia  diretamente  no  problema,  portanto  é  crucial  na  personalidade  adulta” (SANGIOVANNI; BOTTI, 2011, p. 20).
+
+
+]
+
+.pull-right[
+
+```{r out.width="80%", echo=FALSE}
+knitr::include_graphics("img/fabiana-08.jpg")
+```
+
+<br>
+
+_Referências:_
+
+A Fantástica fábrica de chocolate [filme]. Produção: Warner Bros; 2005.
+
+Sangiovanni, A., & Botti, N. (2011). **Produção cinematográfica como fonte de estudo sobre transtorno da personalidade esquizotípica.** Revista de Enfermagem da UFSM, 1(1), 15-21. 
+
+
+]
+
+
+
+
+
+
+---
+background-image: url(img/kedma-00.jpg)
+background-size: cover
+
+
+### Garota, Interrompida (1999)
+
+<!-- Works with xaringan's default CSS -->
+
+.pull-left[
+
+- **DSM-5:** Padrão de relacionamentos interpessoais instáveis e intensos caracterizado pela alternância entre extremos de idealização e desvalorização; Perturbação da identidade: instabilidade acentuada e persistente da autoimagem ou da percepção de si mesmo; Recorrência de comportamento, gestos ou ameaças suicidas ou de comportamento automutilante; Sentimentos crônicos de vazio; Instabilidade afetiva devida a uma acentuada reatividade de humor; Raiva intensa e inapropriada ou dificuldade em controlá-la (ex. mostras frequentes de irritação); Ideação paranóide transitória associada a estresse ou sintomas dissociativos intensos.
+
+- **Estudo da Universidade lterana do Brasil, 2020** – observação do caso cinematográfico para fins de hipóteses diagnóstica. O método de análise utilizado foi a observação sistemática
+
+
+]
+
+
+
+
+---
+background-image: url(img/kedma-01.jpg)
+background-size: cover
+
+
+### Garota, Interrompida (1999)
+
+<!-- Works with xaringan's default CSS -->
+
+.pull-left[
+
+- **Baseado:** no livro autobiográfico da escritora Susanna Kaysen
+
+- **Atualmente:** a organização borderline é descrita como personalidade imatura, caracterizada por difusão de identidade e uso de defesas primitivas como cisão e identificação projetiva.
+
+- **Episódio depressivo**
+
+- **Comportamentos de instabilidade cognitiva**
+
+- **Comportamento de impulsividade:** relacionamento com professor ,Tobby e funcionário do hospital.
+
+- **Dependência emocional  com Lisa**
+
+
+]
+
+
+
+---
+background-image: url(img/kedma-02.jpg)
+background-size: cover
+
+
+
+### Garota, Interrompida (1999)
+
+<!-- Works with xaringan's default CSS -->
+
+.pull-left[
+
+- **Relação conturbada com os pais, em especial a mãe (abandono)**
+
+- **Foram observadas as seguintes alterações nas funções psíquicas de Susanna:** consciência (obnubilação, perceptível na primeira consulta de S. após a tentativa de suicídio); orientação (em função do baixo nível de consciência e também se incomodava com questões relacionadas à falta de controle do tempo, do passado e presente); atenção (apresenta distraibilidade em vários momentos, mas principalmente após situações estressoras); afeto (hipomodulação, alterações inconstantes no humor), juízo (delírio de negação de partes do seu corpo, como quando diz que seus pulsos estavam quebrados) e no pensamento (mágico). Negação: consumir aspirinas em grande quantidade
+
+
+
+]
+
+
+
+---
+background-image: url(img/victor-01.jpg)
 background-size: cover
 class: inverse
 
-# MAQUIAGEM ARTÍSTICA
+
+# Em 11 de março de 2020, <br> a COVID-19 foi caracterizada pela <br> OMS como uma pandemia  
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+.small[
+
+https://www.paho.org/pt/covid19/historico-da-pandemia-covid-19
+
+]
+
+
 
 
 ---
-background-image: url(img/arteterapia.jpg)
+background-image: url(img/victor-02.jpg)
+background-size: cover
+class: inverse
+
+
+# O canal Filipe Psi no youtube, começou 2 anos atras 
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+.small[
+
+https://www.youtube.com/channel/UCoJxlZ9_HHpusIdNJ9t2WZQ
+
+]
+
+
+
+
+---
+background-image: url(img/victor-03.jpg)
+background-size: cover
+class: inverse
+
+
+# Em setembro de 2020 foi a estreia <br> do canal Psicólogo analisa 
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+.small[
+
+https://www.youtube.com/channel/UCfGv1j8Lf8C3CU3_YhDQaBA
+
+]
+
+
+
+---
+background-image: url(img/victor-06.jpg)
 background-size: cover
 
----
-class: middle
+
+# A psicóloga e <br> produtora <br> de conteúdo <br> Gabriela Fonseca <br> no TikTok  
+
+<br>
+<br>
 
 
-.pull-left[
+.small[
 
-## Catarse
+https://vm.tiktok.com/ZMRkuagFo/
 
-```{r out.width="100%", echo=FALSE}
-knitr::include_graphics("img/freud.jpg")
-```
-]
-
-.pull-right[
-
-## Autonomia do sujeito
-
-```{r out.width="100%", echo=FALSE}
-knitr::include_graphics("img/vygotsky.jpg")
-```
 ]
 
 
+
 ---
-background-image: url(img/glowup.jpg)
+background-image: url(img/victor-08.jpg)
 background-size: cover
 
 
----
+# Bruno Lima Nunes, um produtor de conteúdo <br> diagnosticado com TDAH 
 
-.pull-left[
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+.small[
 
-```{r, out.width="100%", echo=FALSE}
-knitr::include_graphics("https://media2.giphy.com/media/1iu8uG2cjYFZS6wTxv/giphy-downsized.gif")
-```
-
-]
-
-.pull-right[
-
-#### **Referências**:
-
-- ANDRADE, Maria Antonia Alonso de; ALONSO, Maria Antonia. A identidade como
-representação social. Revista Política &amp; Trabalho, João Pessoa, Universidade Federal da
-Paraíba, n. 11, p. 63-73, 1995.
-
-- BARROCO, Sonia Mari Shima; SUPERTI, Tatiane. Vigotski eo estudo da psicologia da arte:
-contribuições para o desenvolvimento humano. Psicologia &amp; sociedade, v. 26, n. 1, p. 22-31,
-2014.
-
-- BRUM, Lucimar Filot da Silva; MARAVIESKI, Silvinha; BERTIM, Fernanda Raquel Silva.
-INFLUÊNCIA DO VISAGISMO E DA MAQUIAGEM NA AUTOESTIMA DE
-ADOLESCENTES INSTITUCIONALIZADAS. Revista Interdisciplinar de Estudos em
-Saúde, v. 2, n. 2, p. 11-24, 2013.
-
-- GOLDBERG, Luciane Germano; YUNES, Maria Angela Mattar; FREITAS, José Vicente de. O
-desenho infantil na ótica da ecologia do desenvolvimento humano. Psicologia em estudo, v. 10,
-n. 1, p. 97-106, 2005.
+https://www.instagram.com/brunolimanunes/
 
 ]
 
----
-
-.pull-left[
-
-```{r, out.width="100%", echo=FALSE}
-knitr::include_graphics("https://media2.giphy.com/media/1iu8uG2cjYFZS6wTxv/giphy-downsized.gif")
-```
-
-]
-
-.pull-right[
-
-#### **Referências**:
-
-- RECH, Gabriela et al. Camuflagem Cosmética: O Uso da Maquiagem para a Correção dos
-Defeitos da Pele. UNIVALI, Florianópolis, Santa Catarina, 2010.
-
-- REIS, Alice Casanova dos. Arteterapia: a arte como instrumento no trabalho do Psicólogo.
-Psicologia: Ciência e Profissão, v. 34, n. 1, p. 142-157, 2014.
-
-- SERRA, Adriano Supardo Vaz. O auto-conceito. Análise psicológica, v. 6, p. 101-110, 1988.
-
-- SILVEIRA, Natália Maia Braz. Automaquiagem como exercício cênico. 2016.
-
-- WACHELKE, João Fernando Rech; CAMARGO, Brigido Vizeu. Representações sociais,
-representações individuais e comportamento. Interamerican Journal of Psychology, v. 41, n. 3,
-p. 379-390, 2007.
-]
 
 
 ---
-class: middle  
+background-image: url(img/victor-10.jpg)
+background-size: cover
+class: inverse
+
+
+# Uma pessoa que diz ser <br> diagnosticada com TDI e possui <br> mais de 100 alters 
+
+
+
+
+---
+background-image: url(img/geovane-02.png)
+background-size: cover
+
+
+
+# TRANSTORNOS DA PERSONALIDADE <br> NO CINEMA BRASILEIRO
+
+**Instrumentos utilizados na pesquisa:**
+
+- The Massachusetts General Hospital <br> Personality Disorders Checklist (MGH PDC);
+
+- Escala de Avaliação de Realismo (EAR);
+
+- Escala de avaliação de potencial didático (EAPD).
+
+
+
+
+
+---
+background-image: url(img/geovane-02.png)
+background-size: cover
+
+
+
+# TRANSTORNOS DA PERSONALIDADE <br> NO CINEMA BRASILEIRO
+
+**Procedimentos:**
+
+- Realizado por três avaliadoras;
+
+- 1ª Avaliadora e 2ª Avaliadora são <br> pesquisadoras e especialistas em enfermagem psiquiátrica;
+
+- 3ª Avaliadora é graduanda em psicologia, <br> inscrita em projeto de iniciação científica
+
+
+
+
+
+---
+background-image: url(img/geovane-05.png)
+background-size: cover
+
+
+
+# É Proibido Fumar 
+
+## _Baby - Paranoide_ 
+
+.pull-left[
+
+- Suspeita, sem fundamento suficiente, de estar sendo explorada, maltratada ou enganada pelos outros; 
+
+- Interpreta significados ocultos, de caráter humilhante ou ameaçador, em observações ou acontecimentos benignos;
+
+- Apresenta suspeitas recorrentes, sem justificativa, quanto à fidelidade do cônjuge ou parceiro sexual.
+
+]
+
+
+
+
+---
+background-image: url(img/geovane-08.jpg)
+background-size: cover
+
+
+
+# O Cheiro do Ralo  
+
+## _Noiva - Borderline_
+
+.pull-left[
+
+- Esforços desesperados para evitar o abandono;
+
+- Exibe padrão de relacionamento instável e intenso com Lourenço, com extremos de idealização e desvalorização;
+
+- Demonstra instabilidade afetiva;
+
+- Dificuldade em controlar a raiva;
+
+- Comportamento suicida.
+
+
+]
+
+
+
+---
+background-image: url(img/geovane-11.jpg)
+background-size: cover
+
+
+
+# O Auto da Compadecida
+## _Dora - Histriônica_
+
+.pull-left[
+
+.small[
+
+- Sente desconforto em situações em que não é o centro das atenções;
+- Tem interações caracterizadas por comportamento sexualmente sedutor inadequado e provocativo;
+- Exibe mudanças rápidas e expressão superficial das emoções;
+- Usa repetida vezes a aparência física para atrair a atenção sobre si;
+- Mostra dramatização, teatralidade e expressão exagerada das emoções;
+- Apresenta episódios disfóricos/instabilidade afetiva.
+
+]
+
+]
+
+
+
+
+---
+background-image: url(img/yasmin-02.jpg)
+background-size: cover
+
+
+
+# CRIME DELICADO (2005)  
+
+.pull-left[
+
+.small[
+
+**Personagem:** Antônio
+<br>
+**Transtorno da Personalidade:** Esquizoide
+<br>
+<br>
+**Critérios de avaliação:**
+
+- Antônio suspeita, sem embasamento suficiente, estar sendo enganado por Inês
+
+- Percebe significados humilhantes e ocultos no comportamento da atriz que tenta seduzi-lo
+
+- Evita atividades profissionais que envolvam contato interpessoal significativo
+
+- Mostra-se reservado em relacionamentos íntimos devido a medo de passar vergonha ou de ser ridicularizado
+
+
+]
+
+]
+
+
+
+
+---
+background-image: url(img/yasmin-02.jpg)
+background-size: cover
+
+
+
+# CRIME DELICADO (2005)  
+
+.pull-left[
+
+.small[
+
+
+**Critérios de avaliação:**
+
+- Se inibe em situações interpessoais novas em razão de sentimentos de inadequação
+
+- Quase sempre opta por atividades solitárias
+
+- Não tem amigos próximos ou confidentes
+
+- Apresenta distanciamento afetivo/afeto constrito
+
+- Assume posturas arrogantes
+
+- Há alterações da forma do pensamento acompanhadas por conteúdo extremamente metafórico e bizarro.
+
+
+]
+
+]
+
+
+
+
+
+---
+background-image: url(img/yasmin-04.jpg)
+background-size: cover
+
+# À BEIRA DO CAMINHO (2012)  
+
+.pull-left[
+
+.small[
+
+**Personagem:** João
+<br>
+**Transtorno da Personalidade:** Esquizoide
+<br>
+<br>
+**Critérios de avaliação:** 
+- Reluta em envolver-se com outras pessoas
+- Quase sempre opta por atividades solitárias
+- Não tem amigos próximos
+- Mostra-se indiferente a elogios ou críticas de outros
+- Demonstra frieza emocional, distanciamento ou afetividade embotada
+
+
+]
+
+]
+
+
+---
+background-image: url(img/yasmin-06.jpg)
+background-size: cover
+
+# 2 PERDIDOS NUMA <br> NOITE SUJA (2002)  
+
+.pull-left[
+
+.small[
+
+**Personagem:** Paco
+<br>
+**Transtorno da Personalidade:** Narcisista
+<br>
+<br>
+**Critérios de avaliação:** 
+- Sensação grandiosa da própria importância 
+- Preocupação com fantasias de sucesso ilimitado
+- É exploradora em relações interpessoais
+- Carece de empatia
+- Assume atitudes absolutamente arrogantes/insolentes
+
+
+]
+
+]
+
+
+
+
+---
+background-image: url(img/yasmin-07.jpg)
+background-size: cover
+
+# TROPA DE ELITE (2007)  
+
+.pull-left[
+
+.small[
+
+**Personagem:** Nascimento
+<br>
+**Transtorno da Personalidade:** Obssessivo-compulsivo
+<br>
+<br>
+**Critérios de avaliação:** 
+
+- Demonstra perfeccionismo que interfere na conclusão de tarefas
+- Excessivamente dedicado ao trabalho em detrimento de atividades familiares e de lazer
+- Excessivamente inflexível quanto a assuntos de moralidade, ética e valores
+- Reluta em delegar tarefas ou trabalhar com outras pessoas a menos que elas se submetam à sua forma de fazer as coisas
+- Exibe rigidez e teimosia
+- Demonstra descaso pela segurança de seus investigados
+- Apresenta constante irritabilidade de agressividade
+
+
+]
+
+]
+
+
+
+
+
+---
+background-image: url(img/fabiana-09.jpg)
+background-size: cover
+class: inverse
+
+# ESTUDO DE CASO:
+
+.pull-left[
+
+<br>
+**TRANSTORNO DE PERSONALIDADE ANTISSOCIAL <br> Fisher, S. F. (2007)**
+<br>
+<br>
+**DIAGNÓSTICOS:** 
+<br>
+<br>
+**TDAH:** é um transtorno do neurodesenvolvimento, manifesta-se por meio da:
+
+- Desatenção
+- Hiperatividade
+- Impulsividade 
+- Interferência em seu desenvolvimento e interações sociais.
+
+
+]
+
+
+
+
+---
+background-image: url(img/fabiana-09.jpg)
+background-size: cover
+class: inverse
+
+# ESTUDO DE CASO:
+
+.pull-left[
+
+<br>
+**TRANSTORNO DE PERSONALIDADE ANTISSOCIAL <br> Fisher, S. F. (2007)**
+<br>
+<br>
+**DIAGNÓSTICOS:** 
+<br>
+<br>
+**Transtorno De Apego Reativo:** o transtorno conforme o DSM V é classificado como um transtorno relacionado a traumas e estressores. Caracterizado por:
+
+- Uma infância com vínculos perturbados
+- Criança não busca uma figura de apego nos momentos de necessidade
+- Comportamento inibido 
+- Retraimento emocional em relação ao cuidador
+- Perturbação emocional e social.	
+
+]
+
+
+
+---
+background-image: url(img/fabiana-09.jpg)
+background-size: cover
+class: inverse
+
+# ESTUDO DE CASO:
+
+.pull-left[
+
+<br>
+**TRANSTORNO DE PERSONALIDADE ANTISSOCIAL <br> Fisher, S. F. (2007)**
+<br>
+<br>
+**DIAGNÓSTICOS:** 
+<br>
+<br>
+**Transtorno de personalidade Antissocial (TPAS):**  faz parte do grupo B: transtornos dramáticos, imprevisíveis ou irregulares
+
+- Indiferença e violação dos direitos dos outros.
+- Surge na infância ou no início da adolescência e continua na vida adulta. 
+- Também conhecido como psicopatia, sociopatia ou transtorno da personalidade dissocial
+	
+
+]
+
+
+---
+background-image: url(img/fabiana-09.jpg)
+background-size: cover
+class: inverse
+
+# ESTUDO DE CASO:
+
+.pull-left[
+
+<br>
+**TRANSTORNO DE PERSONALIDADE ANTISSOCIAL <br> Fisher, S. F. (2007)**
+<br>
+<br>
+Paciente buscou o neurofeedback (modulação das ondas cerebrais) pois já tinha tentado psicoterapia e medicações, se não desse certo iria tirar a vida. 
+<br>
+No neurofeedback é utilizado o EEG com um software acoplado, o paciente recebe uma serie de estímulos, com a resposta ele recebe um neurofeedback e aprende a regular suas ondas cerebrais. 
+
+- Histórico familiar 
+- Hipotese 
+- Tratamento
+- Melhora do quadro
+- Resultado
+
+
+]
+
+
+
+---
+background-image: url(img/fabiana-09.jpg)
+background-size: cover
+class: inverse
+
+# ESTUDO DE CASO:
+
+.pull-left[
+
+<br>
+**TRANSTORNO DE PERSONALIDADE ANTISSOCIAL <br> Fisher, S. F. (2007)**
+<br>
+<br>
+<br>
+
+_Referências:_ 
+Fisher, S. F. (2007). Neurofeedback, affect regulation and attachment: A case study and analysis of anti-social personality. _International Journal of Behavioral Consultation and Therapy_, 3(1), 109-117. http://dx.doi.org/10.1037/h0100171
+
+
+
+]
+
+
+
+
+---
+background-image: url(img/kedma-04.jpg)
+background-size: cover
+
+### TRANSTORNO DA PERSONALIDADE <br> HISTRIÔNICA
+
+.pull-left[
+
+- O Grupo B.
+- Para que o indivíduo seja diagnosticado com o transtorno, deve apresentar cinco ou mais dos critérios seguintes: Desconforto em situações em que não é o centro das atenções / Interação social frequentemente caracterizada por comportamento sexualmente sedutor, inadequado ou provocativo / Exibe mudanças rápidas e expressão superficial das emoções / Uso reiterado da aparência física para atrair a atenção para si / Estilo de discurso excessivamente impressionista e carente de detalhe / Autodramatização, teatralidade e expressão exagerada das emoções / Sugestionabilidade (i.e. facilmente influenciado pelos outros ou pelas circunstâncias) / Consideração das relações pessoais mais íntimas do que na realidade são.
+
+
+
+]
+
+
+
+---
+background-image: url(img/kedma-04.jpg)
+background-size: cover
+
+### TRANSTORNO DA PERSONALIDADE <br> HISTRIÔNICA
 
 
 
 .pull-left[
 
-# Agradecimentos
+- Desempenham papeis (p.ex “vítima” ou “princesa”)
+- Manipulação emocional ou sedução
+- Clinicamente, o TPH é mais frequentemente diagnosticado em mulheres, e quando é diagnosticado em homens está associado à homossexualidade.
+- Antigamente associado aos quadros de histeria
 
-```{r, out.width="100%", echo=FALSE}
-knitr::include_graphics("https://media1.giphy.com/media/3oz8xIsloV7zOmt81G/giphy.gif")
-```
+
+
+]
+
+
+
+
+
+---
+background-image: url(img/kedma-04.jpg)
+background-size: cover
+
+### TRANSTORNO DA PERSONALIDADE <br> HISTRIÔNICA
+
+
+.pull-left[
+
+**Diferenciações:**
+<br>
+- Transtorno da personalidade boderline
+- Transtorno de personalidade antissocial
+- Transtorno da personalidade narcisista
+- Transtorno da personalidade dependente
+
+<br>
+<br>
+
+BERNARDO, Marco Aurélio; BARRETO, Sara de Oliveira Gomes. TRANSTORNO DA PERSONALIDADE HISTRIÔNICA E SUA POSSÍVEL MANIFESTAÇÃO NAS REDES SOCIAIS. REVISTA DE TRABALHOS ACADÊMICOS–UNIVERSO JUIZ DE FORA, v. 1, n. 5, 2017.
 
 ]
 
-.pull-right[
 
-#### **Encontrem meu trabalho online**:
 
-  - Repositório do GitHub desta apresentação:
-    - [kedmathay/kedma_portifoliomakeup](https://github.com/kedmathay/kedma_portifoliomakeup)
-    
-  - Link do Slide Online:
-    - [https://bit.ly/31i4gjG](https://bit.ly/31i4gjG)
+
+
+
+---
+background-image: url(img/kedma-05.jpg)
+background-size: cover
+class: inverse
+
+# Redes sociais:
+
+.pull-left[
+**TRANSTORNO DA PERSONALIDADE HISTRIÔNICA**
+
+- De acordo com Guy Debord (1973), em A Sociedade do Espetáculo, a sociedade foi submetida a algumas mudanças durante o tempo e a história, dentre elas três fases se destacam: a do ser, a do ter e a do parecer.
+- Sociedade capitalista pós revolução industrial: parecer ter. A imagem é o próprio espetáculo e o espetáculo vive de aparência; pois nunca vai apresentar algo negativo, algo que não venda.
+- Pondé (2016) reforça a afirmação “eu existo na medida em que o outro me vê, se o outro não me vê eu sou invisível”
+
+.small[
+BERNARDO, Marco Aurélio; BARRETO, Sara de Oliveira Gomes. Transtorno da personalidade histriônica e sua possível manifestação nas redes sociais. Revista de Trabalhos Acadêmicos - Universo Juiz de Fora, v. 1, n. 5, 2017.
+]
+]
+
+---
+
+class: inverse
+
+# Estudo de caso:
+
+.pull-left[
+
+**TRANSTORNO DA PERSONALIDADE HISTRIÔNICA**
+<br>
+<br>
+
+- paciente de 68 anos, de sexo feminino, separada, com história de quadro depressivo que se estendia já por 22 anos.
+- dificuldade de manter empregos pois se envolvia em brigas com colegas que a “perseguiam”
+- alternava entre o melhor e pior das situações: minha filha é a melhor do mundo, minha filha é a pior filha do mundo
+- Ela não tomava a medicação corretamente e imitava os sintomas da bula
+- Foi diagnosticada com depressão há 13 anos
+
+
+<br>
+PEREIRA, Fernanda Speggiorin et al. Transtorno de personalidade na terceira idade. Archives of Clinical Psychiatry (São Paulo), v. 34, p. 18-22, 2007.
+
 
 ]
+
+
+
+---
+background-image: url(img/yolanda-01.jpg)
+background-size: cover
+class: inverse
+
+# DEPENDÊNCIA EMOCIONAL NOS RELACIONAMENTOS
+
+.pull-left[
+
+.small[
+
+**O QUE É O TRANSTORNO DE PERSONALIDADE DEPENDENTE?** 
+<br>
+
+- O Transtorno de Personalidade Dependente é caracterizado, segundo o DSM-5, como uma tendência que esse indivíduo tem a depender do outro, necessitando de um cuidado excessivo, podendo apresentar também medo de ser abandonado.
+- Os comportamentos dependentes e submissos visam a obter atenção e cuidados e surgem de uma percepção de si mesmo como incapaz de funcionar adequadamente sem o auxílio de outras pessoas.
+- Sentem-se incapazes de funcionar sozinhos que preferem concordar com coisas que consideram erradas, a se arriscarem à perda da ajuda da pessoa que dependem.
+- TPD 's podem até se boicotar, com medo de aparentar ser mais que o outro, com medo
+de ser abandonado ou desprezado
+
+]
+
+]
+
+
+
+---
+class: inverse
+
+# DEPENDÊNCIA EMOCIONAL
+
+
+- A dependência excessiva em qualquer tipo de relacionamento acarreta em prejuízos
+para a vida do indivíduo.
+- Embora muito popular no contexto amoroso, a dependência emocional pode ser apresentada em qualquer âmbito da vida do indivíduo, resultando em uma pessoa intensamente obsessiva e ansiosa.
+- Ela é caracterizada pela necessidade de estar em um relacionamento a fim de se atingir estabilidade emocional;
+- Maior frequência em mulheres;
+- Algumas das causas para a dependência na vida adulta vem da infância,e/ou pelo
+medo de perder, e/ou a ansiedade da separação, fazem com que a pessoa se prenda a
+um amor dependente.
+
+<br>
+<br>
+Referência: 
+<br>
+(BUTION; WECHSLER, 2016, p. 89 apud SANTOS, 2020); Santos (2020);
+
+
+
+---
+class: inverse
+
+### Principais características:
+
+
+- Comportamento de cuidado e atenção excessivo ao outro, renunciando a interesses antes valorizados;
+- Sinais e sintomas de abstinência quando o parceiro(a) está distante (insônia, taquicardia, tensão muscular);
+- O indivíduo costuma se queixar de falta de atenção do(a) parceiro(a) de forma recorrente;
+- Dificuldade de autocontrole;
+- Sentimento de raiva, mágoa e ressentimento;
+- Sentimentos de tristeza, solidão, desânimo e depressão.
+- A dependência emocional também pode ser caracterizada por outros comportamentos, como a possessividade e ciúmes excessivos, em relacionamentos amorosos, fazendo com que o indivíduo dependente se torne uma pessoa tóxica em seus relacionamentos, por sempre querer atenção, de forma disfuncional.
+
+
+<br>
+<br>
+
+Referência: 
+<br>
+ (SOPHIA, 2008 apud SANTOS, 2020); (BOWLBY, 2002 apud SANTOS, 2020);
+
+
+
+
+
+
+
+---
+class: inverse
+
+### DEPENDÊNCIA EMOCIONAL NOS RELACIONAMENTOS
+
+
+- Nos relacionamentos com dependência emocional alguns comportamentos autodestrutivos e comorbidades parecem fazer parte do quadro de dependência como:
+- transtornos alimentares;
+- transtornos ansiosos;
+- depressão;
+- Quando falamos de dependência emocional, o assunto dos relacionamentos abusivos tem certo destaque, inclusive chegando ao entendimento que a dependência emocional seria fator de risco para violência.
+ Pesquisas afirmam que há uma tendência em homens com dependência emocional a desempenharem mais frequentemente o papel de abusadores, enquanto as mulheres tendem a desempenhar o papel de vítimas.
+- Nos âmbitos sociais, o indivíduo dependente emocionalmente tem insegurança em começar algum projeto ou necessita constantemente de aprovação, de conselhos para realizar determinado ato ou ainda para ajudá-lo a resolver seus problemas cotidianos, inclusive em relações de amizade.
+
+
+<br>
+<br>
+
+Referência: 
+<br>
+  (BUTION; WECHSLER, 2016 apud SANTOS, 2020)
+
+
+
+---
+background-image: url(img/yolanda-03.jpg)
+background-size: cover
+
+.pull-left[
+
+**TRANSTORNO DE PERSONALIDADE <br> DEPENDENTE EM FILMES**
+<br>
+<br>
+**Marcas do silêncio (1996)**
+
+- Relacionamento abusivo e dependente entre a mãe Anney e o padrasto de Bone.
+
+
+
+]
+
+
+
+---
+background-image: url(img/final.jpg)
+background-size: cover
+class: inverse
+
+# Fim 
+
+## Obrigado a todos pela atenção
